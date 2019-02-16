@@ -1,0 +1,5 @@
+/src/secrets/mapKey.js
+/src/secrets/firebaseConfig.js
+node_modules
+__MACOSX
+docs
