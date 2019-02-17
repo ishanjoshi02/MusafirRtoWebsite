@@ -4,6 +4,9 @@ import { FormGroup, Label, Input } from "reactstrap";
 
 import Button from "components/CustomButton/CustomButton.jsx";
 import { auth } from "../../Firebase";
+import JWT_SECRET from "../../secrets/jwtSecrets";
+
+const jwt = require("jsonwebtoken");
 
 class Login extends Component {
   state = { email: "", password: "", error: "" };
@@ -23,9 +26,15 @@ class Login extends Component {
   };
   onSubmit = e => {
     e.preventDefault();
-    auth.doSignInWithEmailAndPassword(this.state).catch(e => {
-      this.setState({ error: e.message });
-    });
+    auth
+      .doSignInWithEmailAndPassword(this.state)
+      .then(res => {
+        document.cookie = `token=${jwt.sign(res, JWT_SECRET)}`;
+        this.props.history.push("/");
+      })
+      .catch(e => {
+        this.setState({ error: e.message });
+      });
   };
   render() {
     return (

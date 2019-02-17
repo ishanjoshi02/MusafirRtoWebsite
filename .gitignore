@@ -4,3 +4,5 @@ node_modules
 __MACOSX
 docs
 /build
+/.firebase
+/src/secrets/jwtSecrets.js

@@ -49,7 +49,7 @@ var dashRoutes = [
     path: "/upgrade",
     name: "Upgrade to PRO",
     icon: "nc-icon nc-spaceship"
-  }
-  // { redirect: true, path: "/", pathTo: "/dashboard", name: "Dashboard" }
+  },
+  { redirect: true, path: "/", pathTo: "/dashboard", name: "Dashboard" }
 ];
 export default dashRoutes;

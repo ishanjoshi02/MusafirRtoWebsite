@@ -8,6 +8,7 @@
     "chart.js": "2.7.2",
     "firebase": "^5.8.3",
     "history": "4.7.2",
+    "jsonwebtoken": "^8.4.0",
     "node-sass": "4.9.3",
     "perfect-scrollbar": "1.4.0",
     "react": "next",
