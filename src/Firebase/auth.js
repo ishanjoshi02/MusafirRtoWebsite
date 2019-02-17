@@ -10,6 +10,9 @@ export const doSignInWithEmailAndPassword = ({ email, password }) => {
 };
 
 // Sign Out
-export const doSignOut = () => auth.signOut();
+export const doSignOut = () => {
+  document.cookie = "token=;expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+  auth.signOut();
+};
 
 export const getUser = () => auth.currentUser;
